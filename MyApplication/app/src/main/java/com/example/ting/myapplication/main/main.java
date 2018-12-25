@@ -120,7 +120,7 @@ public class main extends AppCompatActivity {
 
         RecyclerView mMainRvShowDiary = findViewById(R.id.main_rv_show_diary);
 
-        FloatingActionButton mMainFabEnterEdit = findViewById(R.id.main_fab_enter_edit);
+        @SuppressLint("WrongViewCast") FloatingActionButton mMainFabEnterEdit = findViewById(R.id.main_fab_enter_edit);
 
         RelativeLayout mMainRlMain = findViewById(R.id.main_rl_main);
 
@@ -145,7 +145,7 @@ public class main extends AppCompatActivity {
 
     private void initTitle() {
         mMainTvDate.setText("今天，" + GetDate.getDate());
-        mCommonTvTitle.setText("日记");
+        mCommonTvTitle.setText("日記");
         mCommonIvBack.setVisibility(View.INVISIBLE);
         mCommonIvTest.setVisibility(View.INVISIBLE);
 

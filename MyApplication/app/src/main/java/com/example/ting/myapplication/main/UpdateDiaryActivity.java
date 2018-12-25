@@ -121,7 +121,7 @@ public class UpdateDiaryActivity extends AppCompatActivity {
     private void initTitle() {
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
-        mCommonTvTitle.setText("修改日记");
+        mCommonTvTitle.setText("修改日記內容");
     }
 
     //@OnClick({R.id.common_iv_back, R.id.update_diary_tv_date, R.id.update_diary_et_title, R.id.update_diary_et_content, R.id.update_diary_fab_back, R.id.update_diary_fab_add, R.id.update_diary_fab_delete})
@@ -140,7 +140,7 @@ public class UpdateDiaryActivity extends AppCompatActivity {
                     break;
                 case R.id.update_diary_fab_back:
                     android.support.v7.app.AlertDialog.Builder alertDialogBuilder = new android.support.v7.app.AlertDialog.Builder(UpdateDiaryActivity.this);
-                    alertDialogBuilder.setMessage("确定要删除该日记吗？").setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                    alertDialogBuilder.setMessage("確定要刪除嗎？").setPositiveButton("确定", new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
 
 //                        String title = mUpdateDiaryEtTitle.getText().toString();
@@ -184,7 +184,7 @@ public class UpdateDiaryActivity extends AppCompatActivity {
                 break;
             case R.id.update_diary_fab_back:
                 android.support.v7.app.AlertDialog.Builder alertDialogBuilder = new android.support.v7.app.AlertDialog.Builder(this);
-                alertDialogBuilder.setMessage("确定要删除该日记吗？").setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                alertDialogBuilder.setMessage("確定要刪除該日記？").setPositiveButton("确定", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
 
 //                        String title = mUpdateDiaryEtTitle.getText().toString();

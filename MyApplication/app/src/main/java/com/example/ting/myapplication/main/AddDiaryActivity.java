@@ -95,7 +95,7 @@ public class AddDiaryActivity extends AppCompatActivity {
         mAddDiaryEtTitle.setText(intent.getStringExtra("title"));
         StatusBarCompat.compat(this, Color.parseColor("#161414"));
 
-        mCommonTvTitle.setText("添加日记");
+        mCommonTvTitle.setText("添加日記");
         mAddDiaryTvDate.setText("今天，" + GetDate.getDate());
         mAddDiaryEtContent.setText(intent.getStringExtra("content"));
         mHelper = new DiaryDatabaseHelper (this, "Diary.db", null);
@@ -136,7 +136,7 @@ public class AddDiaryActivity extends AppCompatActivity {
                     final String contentBack = mAddDiaryEtContent.getText().toString();
                     if(!titleBack.isEmpty() || !contentBack.isEmpty()){
                         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(AddDiaryActivity.this);
-                        alertDialogBuilder.setMessage("是否保存日记内容？").setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                        alertDialogBuilder.setMessage("是否保存內容？").setPositiveButton("確定", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {
                                 SQLiteDatabase db = mHelper.getWritableDatabase();
                                 ContentValues values = new ContentValues();
@@ -190,7 +190,7 @@ public class AddDiaryActivity extends AppCompatActivity {
                 final String contentBack = mAddDiaryEtContent.getText().toString();
                 if(!titleBack.isEmpty() || !contentBack.isEmpty()){
                     AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-                    alertDialogBuilder.setMessage("是否保存日记内容？").setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                    alertDialogBuilder.setMessage("是否保存？").setPositiveButton("確定", new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
                             SQLiteDatabase db = mHelper.getWritableDatabase();
                             ContentValues values = new ContentValues();
