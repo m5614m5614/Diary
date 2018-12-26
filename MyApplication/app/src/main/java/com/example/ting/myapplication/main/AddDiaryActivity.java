@@ -64,8 +64,8 @@ public class AddDiaryActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_diary);
-
-
+        AppManager.getAppManager().addActivity(this);
+// ========================================================
         mAddDiaryTvDate = findViewById(R.id.add_diary_tv_date) ;
         mAddDiaryEtTitle = findViewById(R.id.add_diary_et_title) ;
 
@@ -86,16 +86,16 @@ public class AddDiaryActivity extends AppCompatActivity {
         findViewById (R.id.add_diary_fab_back).setOnClickListener ( onClick );
         findViewById (R.id.add_diary_fab_add).setOnClickListener ( onClick );
         //@OnClick({R.id.common_iv_back, R.id.add_diary_et_title, R.id.add_diary_et_content, R.id.add_diary_fab_back, R.id.add_diary_fab_add})
-
-        AppManager.getAppManager().addActivity(this);
         //ButterKnife.bind(this);
+// ========================================================
+
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
         Intent intent = getIntent();
         mAddDiaryEtTitle.setText(intent.getStringExtra("title"));
         StatusBarCompat.compat(this, Color.parseColor("#161414"));
 
-        mCommonTvTitle.setText("寫入日記");
+        mCommonTvTitle.setText("增加日記");
         mAddDiaryTvDate.setText("今天，" + GetDate.getDate());
         mAddDiaryEtContent.setText(intent.getStringExtra("content"));
         mHelper = new DiaryDatabaseHelper (this, "Diary.db", null);
