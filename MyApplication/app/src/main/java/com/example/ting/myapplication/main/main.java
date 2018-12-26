@@ -67,6 +67,9 @@ public class main extends AppCompatActivity {
     LinearLayout mItemFirst;
 
     LinearLayout mMainLlMain;
+
+
+
     private List<DiaryBean> mDiaryBeanList;
 
     private DiaryDatabaseHelper mHelper;
@@ -76,7 +79,7 @@ public class main extends AppCompatActivity {
     private int mEditPosition = -1;
 
     /**
-     * 标识今天是否已经写了日记
+標示今天是否以寫日記ㄌ
      */
     private boolean isWrite = false;
     private static TextView mTvTest;
@@ -84,7 +87,7 @@ public class main extends AppCompatActivity {
    public static void startActivity(Context context) {
         Intent intent = new Intent(context, main.class);
         context.startActivity(intent);
-    }
+}
 
 
     @Override
@@ -93,6 +96,7 @@ public class main extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         AppManager.getAppManager().addActivity(this);
 
+        //======================元件連接
 
         mCommonIvBack = findViewById(R.id.common_iv_back);
 
@@ -110,6 +114,10 @@ public class main extends AppCompatActivity {
 
         mItemLlControl = findViewById(R.id.item_ll_control);
 
+        //======================元件連接
+
+        //===========如果點下了 addbtn 連到adddiaryactitvty
+
         findViewById (R.id.main_fab_enter_edit).setOnClickListener ( new View.OnClickListener () {
             @Override
             public void onClick(View v) {
@@ -117,6 +125,7 @@ public class main extends AppCompatActivity {
             }
         } );
 
+        //======================元件連接
 
         RecyclerView mMainRvShowDiary = findViewById(R.id.main_rv_show_diary);
 
@@ -128,7 +137,9 @@ public class main extends AppCompatActivity {
 
         mMainLlMain = findViewById(R.id.main_ll_main);
 
-        //ButterKnife.bind(this);
+        //======================元件連接
+        // ButterKnife.bind(this);
+
         StatusBarCompat.compat(this, Color.parseColor("#161414"));
         mHelper = new DiaryDatabaseHelper(this, "Diary.db", null);
         ActionBar actionBar = getSupportActionBar();
@@ -145,7 +156,7 @@ public class main extends AppCompatActivity {
 
     private void initTitle() {
         mMainTvDate.setText("今天，" + GetDate.getDate());
-        mCommonTvTitle.setText("日記");
+        mCommonTvTitle.setText("NTUTDiary");
         mCommonIvBack.setVisibility(View.INVISIBLE);
         mCommonIvTest.setVisibility(View.INVISIBLE);
 
@@ -158,6 +169,7 @@ public class main extends AppCompatActivity {
         SQLiteDatabase sqLiteDatabase = mHelper.getWritableDatabase();
         Cursor cursor = sqLiteDatabase.query("Diary", null, null, null, null, null, null);
 
+      // 如果現在元件日期與系統依樣將 部會顯示  輸入一個日記吧!!!
         if (cursor.moveToFirst()) {
             do {
                 String date = cursor.getString(cursor.getColumnIndex("date"));
@@ -195,7 +207,6 @@ public class main extends AppCompatActivity {
         String content = mDiaryBeanList.get(event.getPosition()).getContent();
         String tag = mDiaryBeanList.get(event.getPosition()).getTag();
         UpdateDiaryActivity.startActivity(this, title, content, tag);
-
     }
 
     @Override

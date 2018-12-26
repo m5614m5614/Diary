@@ -95,7 +95,7 @@ public class AddDiaryActivity extends AppCompatActivity {
         mAddDiaryEtTitle.setText(intent.getStringExtra("title"));
         StatusBarCompat.compat(this, Color.parseColor("#161414"));
 
-        mCommonTvTitle.setText("添加日記");
+        mCommonTvTitle.setText("寫入日記");
         mAddDiaryTvDate.setText("今天，" + GetDate.getDate());
         mAddDiaryEtContent.setText(intent.getStringExtra("content"));
         mHelper = new DiaryDatabaseHelper (this, "Diary.db", null);

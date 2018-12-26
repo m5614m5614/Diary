@@ -18,6 +18,7 @@ public class DiaryDatabaseHelper extends SQLiteOpenHelper {
     private Context mContext;
     public DiaryDatabaseHelper(Context context, String name, SQLiteDatabase.CursorFactory factory){
         super(context, name, factory, version);
+        //context=內容物件；name=傳入資料庫名稱；factory=複雜查詢時使用；version=資料庫版本
         mContext = context;
     }
     @Override
