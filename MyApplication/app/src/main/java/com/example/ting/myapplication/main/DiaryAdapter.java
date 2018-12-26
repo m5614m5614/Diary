@@ -74,7 +74,7 @@ public class DiaryAdapter extends RecyclerView.Adapter<DiaryAdapter.DiaryViewHol
             }
         });
     }
-
+// 數量有幾個
     @Override
     public int getItemCount() {
         return mDiaryBeanList.size();

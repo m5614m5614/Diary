@@ -62,7 +62,7 @@ public class UpdateDiaryActivity extends AppCompatActivity {
         //ButterKnife.bind(this);
 
 
-
+// ========================================================
         mUpdateDiaryTvDate = findViewById (R.id.update_diary_tv_date);
 
         mUpdateDiaryEtTitle = findViewById (R.id.update_diary_et_title);
@@ -102,7 +102,7 @@ public class UpdateDiaryActivity extends AppCompatActivity {
         findViewById (R.id.update_diary_fab_back).setOnClickListener ( onClick );
         findViewById (R.id.update_diary_fab_add).setOnClickListener ( onClick );
         findViewById (R.id.update_diary_fab_delete).setOnClickListener ( onClick );
-
+// ========================================================
 
         mHelper = new DiaryDatabaseHelper(this, "Diary.db", null);
         initTitle();

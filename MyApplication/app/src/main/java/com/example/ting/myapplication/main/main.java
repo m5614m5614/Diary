@@ -172,7 +172,7 @@ public class main extends AppCompatActivity {
       // 如果現在元件日期與系統依樣將 部會顯示  輸入一個日記吧!!!
         if (cursor.moveToFirst()) {
             do {
-                String date = cursor.getString(cursor.getColumnIndex("date"));
+                String date = cursor.getString(cursor.getColumnIndex("date")); // get today date
                 String dateSystem = GetDate.getDate().toString();
                 if (date.equals(dateSystem)) {
                     mMainLlMain.removeView(mItemFirst);

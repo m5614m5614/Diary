@@ -31,7 +31,7 @@ public class AppManager {
     }
 
     /**
-     * 获得当前Activity(栈顶Activity)
+     * 或的現在的activity
      *
      * @return
      */
@@ -44,6 +44,7 @@ public class AppManager {
         return acitivity;
     }
 
+
     public AppCompatActivity findActivity(Class<?> cls){
         AppCompatActivity activity = null;
         for (AppCompatActivity appCompatActivity : activityStack) {
@@ -54,7 +55,7 @@ public class AppManager {
         }
         return activity;
     }
-
+// 結束當前activity
     public void finishActivity(){
         AppCompatActivity activity = activityStack.lastElement();
         finishActivity(activity);
@@ -68,14 +69,14 @@ public class AppManager {
         }
     }
 
-    public void finishActivity(Class<?> cls){
+    /*public void finishActivity(Class<?> cls){
         for (AppCompatActivity activity : activityStack) {
             if(activity.getClass().equals(cls)){
                 finishActivity(activity);
             }
         }
-    }
-
+    }*/
+// end 所有視窗
     public void finishAllActivity(){
         for (int i = 0, size = activityStack.size(); i < size; i++) {
             if (null != activityStack.get(i)) {
@@ -84,6 +85,7 @@ public class AppManager {
         }
         activityStack.clear();
     }
+    //退出aapp
 
     public void AppExit(Context context){
         try{
